@@ -9,7 +9,8 @@ Exporting a result as a file allows users who installed detectron using docker a
 
 infer_simple.py (inside def main(args))
 ...
-cap = cv2.VideoCapture('video.mp4')
+
+    cap = cv2.VideoCapture('video.mp4')
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 
