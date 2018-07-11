@@ -24,7 +24,7 @@ infer_simple.py (inside def main(args))
     while True:
         count += 1
         # Fetch image from camera
-        _, im = cap.read()
+        tmp, im = cap.read()
 
         timers = defaultdict(Timer)
         t = time.time()
