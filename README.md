@@ -10,7 +10,7 @@ Exporting a result as a file allows users who installed detectron using docker a
 infer_simple.py (inside def main(args))
 ...
 
-    cap = cv2.VideoCapture('video.mp4')
+    cap = cv2.VideoCapture('/path/to/video.mp4')
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 
@@ -23,7 +23,7 @@ infer_simple.py (inside def main(args))
 
     while True:
         count += 1
-        # Fetch image from camera
+        # Fetch image from video file frame by frame
         tmp, im = cap.read()
 
         timers = defaultdict(Timer)
@@ -61,7 +61,7 @@ infer_simple.py (inside def main(args))
             ext='jpg'  # default is PDF, but we want JPG.
         )
         time.sleep(0.05)
-        img = cv2.imread('/detectron/mypython/tmp_im.jpg')
+        img = cv2.imread('/directory/where/detectron/is/executed/tmp_im.jpg')
         cv2.putText(img, 'Frame: ',(5, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         cv2.putText(img, str(count),(130, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         cv2.putText(img, 'Model: e2e_mask_rcnn_R-101-FPN_2x.yaml',(200, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
