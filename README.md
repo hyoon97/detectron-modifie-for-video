@@ -8,7 +8,8 @@ Exporting a result as a file allows users who installed detectron using docker a
 ## Modifications
 
 infer_simple.py (inside def main(args))
-...
+
+    ...
 
     cap = cv2.VideoCapture('/path/to/video.mp4')
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
@@ -84,8 +85,9 @@ infer_simple.py (inside def main(args))
     cap.release()
     out.release()
     cv2.destroyAllWindows()
-...
+    ...
 
 # Credit
-https://github.com/facebookresearch/Detectron
-https://github.com/cedrickchee/realtime-detectron
+Origin: https://github.com/facebookresearch/Detectron
+
+Refered: https://github.com/cedrickchee/realtime-detectron
